@@ -238,7 +238,7 @@ func (o *Option[T]) UnmarshalJSON(b []byte) error {
 	}
 
 	err := json.Unmarshal(b, &o.value)
-	if false && err != nil {
+	if err != nil {
 		return err
 	}
 
