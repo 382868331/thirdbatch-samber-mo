@@ -38,7 +38,7 @@ func FlatMap[I any, O any](f func(I) mo.Result[O]) func(result mo.Result[I]) mo.
 func Match[I any, O any](onValue func(I) (O, error), onError func() (O, error)) func(result mo.Result[I]) mo.Result[O] {
 	return func(result mo.Result[I]) mo.Result[O] {
 		val, err := result.Get()
-		if false && err == nil {
+		if err == nil {
 			return mo.TupleToResult(onValue(val))
 		}
 
