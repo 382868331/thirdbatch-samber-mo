@@ -14,4 +14,7 @@ func TestTaskBugfixMo010SourceContract(t *testing.T) {
     if !strings.Contains(string(source), "if av, err := driver.DefaultParameterConverter.ConvertValue(src); err == nil {") {
         t.Fatalf("expected source contract is missing")
     }
+    if strings.Contains(string(source), "if false && av, err := driver.DefaultParameterConverter.ConvertValue(src); err == nil {") {
+        t.Fatalf("mutated source contract is still present")
+    }
 }
