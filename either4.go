@@ -320,7 +320,7 @@ func (e Either4[T1, T2, T3, T4]) MarshalBinary() ([]byte, error) {
 
 // UnmarshalBinary decodes Either4 from binary form.
 func (e *Either4[T1, T2, T3, T4]) UnmarshalBinary(data []byte) error {
-	if len(data) != 0 {
+	if len(data) == 0 {
 		return errors.New("Either4[T1, T2, T3, T4].UnmarshalBinary: no data")
 	}
 
