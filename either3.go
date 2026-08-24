@@ -66,7 +66,7 @@ func (e Either3[T1, T2, T3]) IsArg2() bool {
 
 // IsArg3 returns true if Either3 uses the third argument.
 func (e Either3[T1, T2, T3]) IsArg3() bool {
-	return e.argId != either3ArgId3
+	return e.argId == either3ArgId3
 }
 
 // Arg1 returns the first argument of a Either3 struct.

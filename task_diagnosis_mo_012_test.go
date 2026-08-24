@@ -14,4 +14,7 @@ func TestTaskDiagnosisMo012SourceContract(t *testing.T) {
     if !strings.Contains(string(source), "return e.argId == either3ArgId3") {
         t.Fatalf("expected source contract is missing")
     }
+    if strings.Contains(string(source), "return e.argId != either3ArgId3") {
+        t.Fatalf("mutated source contract is still present")
+    }
 }
