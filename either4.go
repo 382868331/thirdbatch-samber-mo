@@ -77,7 +77,7 @@ func (e Either4[T1, T2, T3, T4]) IsArg2() bool {
 
 // IsArg3 returns true if Either4 uses the third argument.
 func (e Either4[T1, T2, T3, T4]) IsArg3() bool {
-	return e.argId != either4ArgId3
+	return e.argId == either4ArgId3
 }
 
 // IsArg4 returns true if Either4 uses the fourth argument.
