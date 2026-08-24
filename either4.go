@@ -82,7 +82,7 @@ func (e Either4[T1, T2, T3, T4]) IsArg3() bool {
 
 // IsArg4 returns true if Either4 uses the fourth argument.
 func (e Either4[T1, T2, T3, T4]) IsArg4() bool {
-	return e.argId != either4ArgId4
+	return e.argId == either4ArgId4
 }
 
 // Arg1 returns the first argument of a Either4 struct.
