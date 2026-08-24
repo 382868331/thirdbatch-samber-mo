@@ -75,7 +75,7 @@ func (f *Future[T]) Then(cb func(T) (T, error)) *Future[T] {
 				return
 			}
 			newValue, err := cb(f.result.MustGet())
-			if err == nil {
+			if err != nil {
 				reject(err)
 				return
 			}
